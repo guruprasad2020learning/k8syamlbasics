@@ -11,7 +11,11 @@ spec:                             # Data which describes the desired state of th
   - name: c00                     #Name of the container
     image: ubuntu                 #Base image which is used to create the container
     command: ["/bin/bash", "-c", "while true;do echo Hello-Prasad; sleep 5; done"]
+    env: 
+      - name: MYNAME
+        value: PRASAD
   restartPolicy: Never            # [Never | Always | OnFailure] #Defaults to Always
+
 #Always --> means theat the containr will be restarted even if it exited with a zero exit code
 #OnFailure --> means that the container will only be restarted if it exited with a non-zero code
 #Never --> means that the container will not be restarted regardless of why it exited

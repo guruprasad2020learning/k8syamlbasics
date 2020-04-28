@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lebelspod
+  labels:           # Specifices the label details underit
+    company: prasadlabs
+    prod: k8s
+  #Keyname1>: <value>
+spec:
+  containers:
+  - name: c00
+    image: ubuntu
+    command: ["/bin/bash","-c", "while true; do echo Hello-Prasad; sleep 5; done"]

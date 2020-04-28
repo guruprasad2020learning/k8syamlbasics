@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod3
+spec:
+  containers:
+  - name: c00
+    image: ubuntu
+    command: ["/bin/bash", "-c", "while true; do echo Hello-Prasad; sleep 5; done"]
+  - name: c01
+    image: ubuntu
+    command: ["/bin/bash", "-c", "while true; do echo Hello-k8s students; sleep 5; done"]
+
+
+
+
+# $kubectl exec testpod3 -c c00 -it /bin/bash
+# $kubectl logs -f testpod3 -c c00 
+# kubectl describe pod testpod3 -c c00
+# $if you delete one container what will happen? it will spin up another container as by default restart always 
+# $ it brings another container immediately let us see byt deleting one container as below
+# $kubectl delete testpod3 -c c00
+# $ you can stop the continer using docker stop and container ID it will be stopped but it will come back online
+# $ per the Restart policy 
