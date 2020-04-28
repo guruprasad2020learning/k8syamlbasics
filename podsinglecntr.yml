@@ -56,3 +56,6 @@ spec:                             # Data which describes the desired state of th
 # $kjubectl get prods -l 'prod in (test,k8s)'
 # $kubectl get pods -l 'prod notin (test,k8s)'
 # $kubectl delete pods -l 'prod notin (test,kubernetes)'
+# $kubectl label nodes ip-172-31-27-23 hardware=t2-medium #just to label a master/node as you required 
+# $ kubectl get pods -o wide    # to get the local IP address assigned to the POD
+#          
