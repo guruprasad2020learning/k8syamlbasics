@@ -1,0 +1,39 @@
+## Single container pod YAML example
+apiVersion: v1                    # API Version
+kind: Pod                         #Object Type
+metadata:                         # set of data which describes the Object
+  name: testpod                   # Name of the object
+  #label: <Value>
+spec:                             # Data which describes the desired state of the object 
+  containers:                     #Data which describes the desired container details
+  - name: c00                     #Name of the container
+    image: ubuntu                 #Base image which is used to create the container
+    command: ["/bin/bash", "-c", "while true;do echo Hello-Prasad; sleep 5; done"]
+  restartPolicy: Never            # [Never | Always | OnFailure] #Defaults to Always
+#Always --> means theat the containr will be restarted even if it exited with a zero exit code
+#OnFailure --> means that the container will only be restarted if it exited with a non-zero code
+#Never --> means that the container will not be restarted regardless of why it exited
+# ##########Create or update an Object COMMANDS ################
+# $kubectl create -f podsinglecntr.yml
+# $kubectl apply -f podsinglecntr.yml
+# ###########Get the list of the pod objects available COMMANDS ################
+# $kubectl get pods
+# $kubectl get pods -o wide  ????
+# $kubectl get pods --all-namespaces
+# ############Get the details of the pod object COMMANDS ################
+# $kubectl describe pod <podname>
+# ###########Get running logs from the container insdide the pod object COMMANDS #############
+# $kubectl logs -f <podname>
+# $kubectl logs -f <podname> -c <containername>
+# $kubectl apply -f podannotate.yml
+# ############Run OS commands in an existing pod(1 container pod) COMMANDS ################
+# $kubectl exec <podname> --<OS CMD>
+# $kubectl exec testpod2 --hostname -i
+# ############Run OS commands in an existing contianer (multi container pod) COMMANDS ################
+# $kubectl exec <podname> -c <containername> --<OScmd>
+# ############ Attach to the running container interactively COMMANDS ################
+# $kubectl exec <podname> -it --/bin/bash
+# $kubectl exec <podname> -i 
+# # ##########Delete a POD COMMANDS ################
+# $kubectl delete pods <podname> 
+# $kubectl delete -f <YAML>
