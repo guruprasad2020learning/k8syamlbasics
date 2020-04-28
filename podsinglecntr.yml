@@ -3,6 +3,8 @@ apiVersion: v1                    # API Version
 kind: Pod                         #Object Type
 metadata:                         # set of data which describes the Object
   name: testpod                   # Name of the object
+  annotations:
+    description: our first testpod
   #label: <Value>
 spec:                             # Data which describes the desired state of the object 
   containers:                     #Data which describes the desired container details
