@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodelabels
+  labels: 
+    env: dev
+spec: 
+  containers:
+  - name: c00
+    image: ubuntu
+    command: ["/bin/bash", "-c", "while true; do echo Hi_PRASAD; sleep 5; done"]
+  nodeSelector:               # Specifies which node to run the pod
+    hardware: t2-medium
+

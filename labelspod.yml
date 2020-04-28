@@ -11,3 +11,6 @@ spec:
   - name: c00
     image: ubuntu
     command: ["/bin/bash","-c", "while true; do echo Hello-Prasad; sleep 5; done"]
+# $kubectl get pods -l 'prod in (test,k8s)' --show-labels
+# $kubectl get pods -l 'prod notin (test,k8s)' --show-labels
+#
