@@ -62,5 +62,6 @@ spec:                             # Data which describes the desired state of th
 # $ 244  kubectl get rc  # lists all replication controllers
 # $ 4 245  kubectl get rs # gets the all replicasets 
 # $ 246  kubectl get deploy          # gives the deploys it chain related and gets the replica sets
-#
-#
+# $kubectl rollout history deploy <deployment name>
+# $ kubectl rollout undo deplopy <deployment name> 
+# $
