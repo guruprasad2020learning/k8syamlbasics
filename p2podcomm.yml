@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: p2podcomm
+spec:
+  containers:
+  - name: c03
+    image: nginx
+    ports:
+      - containerPort: 80
+    ##    command: ["/bin/bash/", "-c", "while true;do echo Hello_Prasad;sleep 10; done"]
+
